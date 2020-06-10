@@ -1,0 +1,51 @@
+<h1>Api call</h1>
+
+
+
+<select [(ngModel)]="name" (change)="getresponse($event.target.value)">
+   
+    <option value="books">books</option>
+    <option value="houses">houses</option>
+    <option value="characters">characters</option>
+
+</select><br>
+{{name}}
+
+<br><br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                    <p *ngFor="let item of apidata">
+
+                        Name:{{item.name}}<br>
+                        Region:{{item.region}}
+                        CoatOfArms:{{item.coatOfArms}}
+                    
+                   </p>
+            </div>
+
+        </div> 
+        <div class="col-md-6">
+            <p></p>
+            
+           
+
+        </div>
+
+    </div>
+</div>
+
+<h1 align="center">Plese Select Value</h1><br><br>
+
+
+<button (click)=" getresponse('books')" value="books">books</button>
+<button (click)=" getresponse('houses')" value="houses">houses</button>
+<button (click)=" getresponse('characters')" value="characters">characters</button>
+
+<div *ngFor="let item of apidata">
+
+    <p>{{item.name}}</p>
+
+</div>
